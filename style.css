@@ -514,45 +514,19 @@ p{
     margin-bottom:20px;
 }
 
-
-/* SLIDER WRAPPER */
-
 .galeri-slider{
     overflow:hidden;
     position:relative;
 }
 
-
-/* TRACK AUTO SCROLL */
+/* ================= LATIHAN RUTIN (AUTO SCROLL) ================= */
 
 .galeri-track{
     display:flex;
     gap:20px;
     width:max-content;
-    animation:scrollGaleri 30s linear infinite;
+    animation:scrollGaleri 25s linear infinite;
 }
-
-
-/* IMAGE STYLE */
-
-.galeri-track img{
-    width:280px;
-    height:180px;
-    object-fit:cover;
-    border-radius:16px;
-
-    transition:0.4s;
-    cursor:pointer;
-}
-
-/* HOVER ZOOM */
-
-.galeri-track img:hover{
-    transform:scale(1.08);
-}
-
-
-/* AUTO SCROLL ANIMATION */
 
 @keyframes scrollGaleri{
     from{
@@ -563,8 +537,32 @@ p{
     }
 }
 
+/* pause kalau hover */
 .galeri-track:hover{
     animation-play-state:paused;
+}
+
+/* ================= TURNAMEN (STATIC) ================= */
+
+.galeri-track.static{
+    animation:none;
+    width:100%;
+    justify-content:center;
+}
+
+/* IMAGE STYLE */
+
+.galeri-track img{
+    width:280px;
+    height:180px;
+    object-fit:cover;
+    border-radius:16px;
+    transition:0.4s;
+    cursor:pointer;
+}
+
+.galeri-track img:hover{
+    transform:scale(1.08);
 }
 
 /* =========================
@@ -577,17 +575,13 @@ p{
     margin-top:40px;
 }
 
-
-/* TRACK */
-
 .prestasi-track{
     display:flex;
     gap:25px;
-    width:max-content;
-
-    animation:scrollPrestasi 45s linear infinite;
+    width:100%;
+    justify-content:center;
+    flex-wrap:wrap;
 }
-
 
 /* CARD ITEM */
 
@@ -600,9 +594,6 @@ p{
     cursor:pointer;
 }
 
-
-/* IMAGE */
-
 .prestasi-item img{
     width:100%;
     height:100%;
@@ -610,30 +601,14 @@ p{
     transition:0.4s;
 }
 
-
-/* OVERLAY TEXT */
-
 .prestasi-overlay{
     position:absolute;
     bottom:0;
     width:100%;
     padding:20px;
-
     background:linear-gradient(transparent, rgba(0,0,0,0.85));
     transition:0.4s;
 }
-
-.prestasi-overlay h3{
-    font-size:20px;
-}
-
-.prestasi-overlay p{
-    font-size:13px;
-    color:#ccc;
-}
-
-
-/* HOVER EFFECT */
 
 .prestasi-item:hover img{
     transform:scale(1.1);
@@ -641,22 +616,6 @@ p{
 
 .prestasi-item:hover .prestasi-overlay{
     background:linear-gradient(transparent, rgba(0,0,0,0.95));
-}
-
-
-/* AUTO SCROLL */
-
-@keyframes scrollPrestasi{
-    from{
-        transform:translateX(0);
-    }
-    to{
-        transform:translateX(-50%);
-    }
-}
-
-.prestasi-track:hover{
-    animation-play-state:paused;
 }
 
 /* =========================
