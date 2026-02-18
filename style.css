@@ -1,3 +1,8 @@
+:root {
+  --accent: #60efff;
+  --title-font: 'Playfair Display', serif;
+}
+
 /* =========================
    IMPORT FONT
 ========================= */
@@ -91,6 +96,11 @@ p{
     backdrop-filter:blur(14px);
     background:rgba(10,10,10,0.55);
     border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.navbar-scrolled{
+    background: rgba(10,10,10,0.9);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.4);
 }
 
 .nav-container{
