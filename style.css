@@ -451,7 +451,6 @@ p{
     max-width:1000px;
 }
 
-
 /* ROW */
 
 .struktur-row{
@@ -460,16 +459,16 @@ p{
     gap:30px;
     margin:40px 0;
     flex-wrap:wrap;
+    position:relative;
 }
 
-
-/* CARD KHUSUS STRUKTUR */
+/* CARD */
 
 .struktur-card{
     width:240px;
     text-align:center;
+    transition:0.4s;
 }
-
 
 /* CARD KETUA HIGHLIGHT */
 
@@ -478,24 +477,21 @@ p{
     border:1px solid rgba(96,239,255,0.3);
 }
 
-
-/* CONNECTOR LINE */
-
-.struktur-row.center{
-    position:relative;
-}
+/* CONNECTOR LINE (CENTER PERFECT) */
 
 .struktur-row.center::after{
     content:"";
     position:absolute;
+    left:50%;
+    transform:translateX(-50%);
     bottom:-20px;
     width:2px;
     height:40px;
     background:linear-gradient(#00ff87,#60efff);
-    opacity:0.3;
+    opacity:0.4;
 }
 
-/* HOVER EMPHASIS */
+/* HOVER */
 
 .struktur-card:hover{
     transform:translateY(-8px);
