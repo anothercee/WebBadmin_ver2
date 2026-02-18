@@ -462,22 +462,37 @@ p{
     position:relative;
 }
 
-/* CARD */
+/* CARD UMUM */
 
 .struktur-card{
     width:240px;
     text-align:center;
-    transition:0.4s;
+    transition:0.4s ease;
+
+    background:rgba(20,20,22,0.7);
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:18px;
+    padding:28px;
 }
 
-/* CARD KETUA HIGHLIGHT */
+/* HOVER EFFECT */
+
+.struktur-card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(96,239,255,0.4);
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* CARD KETUA (LEBIH MENONJOL) */
 
 .struktur-card.utama{
-    background:rgba(30,30,35,0.8);
-    border:1px solid rgba(96,239,255,0.3);
+    border:1px solid rgba(96,239,255,0.5);
+    box-shadow:0 0 25px rgba(96,239,255,0.25);
 }
 
-/* CONNECTOR LINE (CENTER PERFECT) */
+/* CONNECTOR LINE DI TENGAH */
 
 .struktur-row.center::after{
     content:"";
@@ -489,12 +504,6 @@ p{
     height:40px;
     background:linear-gradient(#00ff87,#60efff);
     opacity:0.4;
-}
-
-/* HOVER */
-
-.struktur-card:hover{
-    transform:translateY(-8px);
 }
 
 /* =========================
