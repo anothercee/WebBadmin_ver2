@@ -1,71 +1,179 @@
-const navbar=document.querySelector(".navbar");
-window.addEventListener("scroll",()=>{
-if(navbar)navbar.classList.toggle("navbar-scrolled",window.scrollY>50);
+/* ================= NAVBAR SCROLL EFFECT ================= */
+
+const navbar = document.querySelector(".navbar");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    navbar.classList.add("navbar-scrolled");
+  } else {
+    navbar.classList.remove("navbar-scrolled");
+  }
 });
 
-const hamburger=document.querySelector(".hamburger");
-const navLinks=document.querySelector(".nav-links");
 
-if(hamburger&&navLinks){
-hamburger.addEventListener("click",()=>{
-navLinks.classList.toggle("active");
-});
-}
+/* ================= HAMBURGER MENU ================= */
 
-/* AUTO SCROLL + DRAG */
-function autoScroll(container,speed=0.6){
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
 
-let isHover=false;
-let isDown=false;
-let startX;
-let scrollLeft;
-
-container.innerHTML+=container.innerHTML;
-
-container.addEventListener("mouseenter",()=>isHover=true);
-container.addEventListener("mouseleave",()=>isHover=false);
-
-container.addEventListener("mousedown",(e)=>{
-isDown=true;
-startX=e.pageX-container.offsetLeft;
-scrollLeft=container.scrollLeft;
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("nav-active");
 });
 
-container.addEventListener("mouseleave",()=>isDown=false);
-container.addEventListener("mouseup",()=>isDown=false);
 
-container.addEventListener("mousemove",(e)=>{
-if(!isDown)return;
-e.preventDefault();
-const x=e.pageX-container.offsetLeft;
-const walk=(x-startX)*2;
-container.scrollLeft=scrollLeft-walk;
+/* ================= SMOOTH SCROLL ================= */
+
+document.querySelectorAll("a[href^='#']").forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+
+    const target = document.querySelector(this.getAttribute("href"));
+
+    if (target) {
+      e.preventDefault();
+
+      target.scrollIntoView({
+        behavior: "smooth"
+      });
+
+      navLinks.classList.remove("nav-active");
+    }
+  });
 });
 
-function scroll(){
-if(!isHover){
-container.scrollLeft+=speed;
-if(container.scrollLeft>=container.scrollWidth/2){
-container.scrollLeft=0;
-}
-}
-requestAnimationFrame(scroll);
-}
-scroll();
-}
 
-const galeriTrack=document.querySelector(".galeri-track");
-const prestasiTrack=document.querySelector(".prestasi-track");
+/* ================= REVEAL ANIMATION ================= */
 
-if(galeriTrack)autoScroll(galeriTrack);
-if(prestasiTrack)autoScroll(prestasiTrack);
+const reveals = document.querySelectorAll(".reveal");
 
-const backTop=document.querySelector(".back-to-top");
-if(backTop){
-window.addEventListener("scroll",()=>{
-backTop.classList.toggle("show",window.scrollY>400);
+const revealObserver = new IntersectionObserver((entries) => {
+
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
+    }
+  });
+
+}, { threshold: 0.2 });
+
+reveals.forEach(el => revealObserver.observe(el));
+
+
+/* ================= ACTIVE NAV LINK ================= */
+
+const sections = document.querySelectorAll("section");
+const navItems = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 120;
+    const sectionHeight = section.clientHeight;
+
+    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navItems.forEach(link => {
+    link.classList.remove("active");
+
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
+
 });
-backTop.addEventListener("click",()=>{
-window.scrollTo({top:0,behavior:"smooth"});
-});
+
+
+/* ================= GALERI CINEMATIC SLIDER ================= */
+
+const galeriTrack = document.querySelector(".galeri-track");
+
+if (galeriTrack) {
+
+  let scrollAmount = 0;
+
+  function autoScrollGaleri() {
+    scrollAmount += 1;
+
+    if (scrollAmount >= galeriTrack.scrollWidth / 2) {
+      scrollAmount = 0;
+    }
+
+    galeriTrack.scrollTo({
+      left: scrollAmount,
+      behavior: "auto"
+    });
+
+    requestAnimationFrame(autoScrollGaleri);
+  }
+
+  autoScrollGaleri();
 }
+
+
+/* ================= PRESTASI SLIDER ================= */
+
+const prestasiTrack = document.querySelector(".prestasi-track");
+
+if (prestasiTrack) {
+
+  let prestasiScroll = 0;
+
+  function autoScrollPrestasi() {
+
+    prestasiScroll += 1;
+
+    if (prestasiScroll >= prestasiTrack.scrollWidth / 2) {
+      prestasiScroll = 0;
+    }
+
+    prestasiTrack.scrollTo({
+      left: prestasiScroll,
+      behavior: "auto"
+    });
+
+    requestAnimationFrame(autoScrollPrestasi);
+  }
+
+  autoScrollPrestasi();
+}
+
+
+/* ================= BACK TO TOP BUTTON ================= */
+
+const backTop = document.querySelector(".back-to-top");
+
+window.addEventListener("scroll", () => {
+
+  if (window.scrollY > 400) {
+    backTop.classList.add("show");
+  } else {
+    backTop.classList.remove("show");
+  }
+
+});
+
+if (backTop) {
+  backTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+}
+
+
+/* ================= TEXT HERO REVEAL DELAY ================= */
+
+window.addEventListener("load", () => {
+
+  const heroText = document.querySelectorAll(".home-content h1, .home-content p, .hero-btn");
+
+  heroText.forEach((el, index) => {
+    el.style.animationDelay = `${index * 0.3}s`;
+  });
+
+});
