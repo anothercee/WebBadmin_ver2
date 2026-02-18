@@ -1,0 +1,143 @@
+/* ================= ROOT ================= */
+
+:root {
+  --accent1: #00ff87;
+  --accent2: #60efff;
+  --accent-gradient: linear-gradient(90deg, #00ff87, #60efff);
+  --bg-dark: #0b0b0c;
+  --card-bg: rgba(20,20,22,0.7);
+  --text-muted: #b5b5b5;
+  --title-font: 'Playfair Display', serif;
+  --body-font: 'Inter', sans-serif;
+}
+
+/* ================= RESET ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-dark);
+  color: white;
+  font-family: var(--body-font);
+  overflow-x: hidden;
+}
+
+/* ================= GLOBAL ================= */
+
+.section {
+  min-height: 100vh;
+  padding: 120px 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1, h2, h3 {
+  font-family: var(--title-font);
+  letter-spacing: 1px;
+}
+
+p {
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  backdrop-filter: blur(12px);
+  background: rgba(10,10,10,0.6);
+  transition: 0.3s;
+}
+
+.navbar-scrolled {
+  background: rgba(0,0,0,0.9);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ccc;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: white;
+}
+
+/* ================= HAMBURGER ================= */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: white;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #111;
+    flex-direction: column;
+    padding: 40px;
+    width: 260px;
+    height: 100vh;
+    transform: translateX(100%);
+    transition: 0.4s;
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+}
+
+/* ======*
