@@ -17,7 +17,7 @@ const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
 
 hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("nav-active");
+  navLinks.classList.toggle("active");
 });
 
 
@@ -35,7 +35,7 @@ document.querySelectorAll("a[href^='#']").forEach(anchor => {
         behavior: "smooth"
       });
 
-      navLinks.classList.remove("nav-active");
+      navLinks.classList.remove("active");
     }
   });
 });
@@ -170,7 +170,7 @@ if (backTop) {
 
 window.addEventListener("load", () => {
 
-  const heroText = document.querySelectorAll(".home-content h1, .home-content p, .hero-btn");
+  const heroText = document.querySelectorAll(".hero-content h1, .hero-content p, .hero-btn");
 
   heroText.forEach((el, index) => {
     el.style.animationDelay = `${index * 0.3}s`;
