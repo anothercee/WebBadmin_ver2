@@ -462,8 +462,6 @@ p{
     position:relative;
 }
 
-/* CARD UMUM */
-
 .struktur-card{
     width:240px;
     text-align:center;
@@ -485,14 +483,7 @@ p{
     box-shadow:0 10px 30px rgba(0,0,0,0.4);
 }
 
-/* CARD KETUA (LEBIH MENONJOL) */
-
-.struktur-card.utama{
-    border:1px solid rgba(96,239,255,0.5);
-    box-shadow:0 0 25px rgba(96,239,255,0.25);
-}
-
-/* CONNECTOR LINE DI TENGAH */
+/* CONNECTOR LINE */
 
 .struktur-row.center::after{
     content:"";
