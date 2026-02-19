@@ -113,6 +113,12 @@ if (galeriTrack) {
   autoScrollGaleri();
 }
 
+document.querySelectorAll(".galeri-track.static video").forEach(v => {
+    v.muted = true;
+    v.autoplay = true;
+    v.loop = true;
+    v.play();
+});
 
 /* ================= PRESTASI SLIDER ================= */
 
