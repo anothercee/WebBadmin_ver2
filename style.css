@@ -24,15 +24,39 @@ html{
     scroll-behavior:smooth;
 }
 
-body {
-    margin:0;
-    height:100vh;
-    font-family:'Inter', sans-serif;
-    background: linear-gradient(45deg, #ff6ec4, #7873f5, #42e695, #00ff87);
-    background-size: 600% 600%;
-    animation: gradientMove 16s ease infinite;
+body{
+    background:#0b0b0c;
     color:white;
+    font-family:'Inter', sans-serif;
     overflow-x:hidden;
+    position:relative;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+
+    background: linear-gradient(
+        45deg,
+        #00ff87,
+        #60efff,
+        #0b0b0c,
+        #00ff87
+    );
+
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+    opacity:0.15; /* ini yang bikin subtle dark */
+}
+
+@keyframes gradientMove {
+    0%{ background-position:0% 50%; }
+    50%{ background-position:100% 50%; }
+    100%{ background-position:0% 50%; }
+}
+
 }
 
 @keyframes gradientMove {
