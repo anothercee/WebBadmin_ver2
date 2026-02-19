@@ -244,6 +244,12 @@ p{
 }
 
 /* HERO BUTTONS */
+.hero-buttons{ 
+  display:flex; 
+  gap:30px; 
+  justify-content:center; 
+  flex-wrap:wrap; 
+}
 .hero-buttons .btn-primary,
 .hero-buttons .btn-secondary {
     padding: 14px 40px;
@@ -253,16 +259,19 @@ p{
     font-size: 0.9rem;
     letter-spacing: 1px;
 
-    color: #fff; 
-    background: linear-gradient(90deg,#a855f7,#9333ea); 
-    transition: 0.3s transform, 0.3s box-shadow;
+    color: #fff; /* teks putih */
+    background: transparent; 
+    border: 2px solid #9333ea; 
+    transition: 0.3s transform, 0.3s box-shadow, 0.3s border-color;
 }
 
 .hero-buttons .btn-primary:hover,
 .hero-buttons .btn-secondary:hover {
-    transform: scale(1.1); 
+    transform: scale(1.1);
     box-shadow: 0 0 18px #9333ea; 
+    border-color: #a855f7; 
 }
+
 
 /* =========================
    UNIVERSAL CARD
