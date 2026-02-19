@@ -153,7 +153,6 @@ window.addEventListener("load", () => {
 
 });
 
-<script>
 const dockItems = document.querySelectorAll(".dock-item");
 
 dockItems.forEach((item, index) => {
@@ -174,4 +173,3 @@ dockItems.forEach((item, index) => {
     dockItems.forEach(el => el.style.transform = "scale(1)");
   });
 });
-</script>
