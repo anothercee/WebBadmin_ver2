@@ -152,3 +152,26 @@ window.addEventListener("load", () => {
   });
 
 });
+
+<script>
+const dockItems = document.querySelectorAll(".dock-item");
+
+dockItems.forEach((item, index) => {
+  item.addEventListener("mouseenter", () => {
+
+    dockItems.forEach(el => el.style.transform = "scale(1)");
+
+    item.style.transform = "scale(1.4)";
+
+    if(dockItems[index - 1])
+      dockItems[index - 1].style.transform = "scale(1.2)";
+
+    if(dockItems[index + 1])
+      dockItems[index + 1].style.transform = "scale(1.2)";
+  });
+
+  item.addEventListener("mouseleave", () => {
+    dockItems.forEach(el => el.style.transform = "scale(1)");
+  });
+});
+</script>
