@@ -840,20 +840,18 @@ p{
 }
 
 .survey-btn {
-  display: inline-block;
+  background: linear-gradient(90deg,#a855f7,#9333ea);
+  color: black;
+  font-weight: 600;
   padding: 14px 40px;
   border-radius: 30px;
   text-decoration: none;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
-  color: #000;
-  font-weight: 600;
   transition: 0.3s;
 }
 
 .survey-btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 18px var(--accent);
+  box-shadow: 0 0 18px #9333ea;
 }
 
 /* ================= FOOTER ================= */
