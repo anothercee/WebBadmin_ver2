@@ -29,40 +29,24 @@ body{
     color:white;
     font-family:'Inter', sans-serif;
     overflow-x:hidden;
-    position:relative;
 }
 
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    z-index:-1;
-
-    background: linear-gradient(
-        45deg,
-        #00ff87,
-        #60efff,
-        #0b0b0c,
-        #00ff87
-    );
-
-    background-size: 400% 400%;
-    animation: gradientMove 15s ease infinite;
-    opacity:0.15; /* ini yang bikin subtle dark */
+#aurora-bg{
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
 }
 
-@keyframes gradientMove {
-    0%{ background-position:0% 50%; }
-    50%{ background-position:100% 50%; }
-    100%{ background-position:0% 50%; }
+#aurora-bg canvas{
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
-}
-
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+.main-content{
+  position: relative;
+  z-index: 1;
 }
 
 /* =========================
