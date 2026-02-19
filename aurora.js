@@ -51,7 +51,7 @@ void main(){
   vec2 uv = gl_FragCoord.xy / uRes;
   
   float n = noise(vec2(uv.x*3.0, uTime*0.4));
-  float y = uv.y + n*0.3;
+  float y = uv.y + n*0.4;
 
   float intensity = smoothstep(0.3,0.6,y);
 
