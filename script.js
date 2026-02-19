@@ -141,31 +141,6 @@ if (prestasiTrack) {
   autoScrollPrestasi();
 }
 
-
-/* ================= BACK TO TOP BUTTON ================= */
-
-const backTop = document.querySelector(".back-to-top");
-
-window.addEventListener("scroll", () => {
-
-  if (window.scrollY > 400) {
-    backTop.classList.add("show");
-  } else {
-    backTop.classList.remove("show");
-  }
-
-});
-
-if (backTop) {
-  backTop.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  });
-}
-
-
 /* ================= TEXT HERO REVEAL DELAY ================= */
 
 window.addEventListener("load", () => {
