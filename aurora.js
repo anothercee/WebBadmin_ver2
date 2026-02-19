@@ -5,10 +5,12 @@ container.appendChild(canvas);
 const gl = canvas.getContext("webgl");
 
 function resize(){
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  const rect = container.getBoundingClientRect();
+  canvas.width = rect.width;
+  canvas.height = rect.height;
   gl.viewport(0,0,canvas.width,canvas.height);
 }
+
 window.addEventListener("resize", resize);
 resize();
 
