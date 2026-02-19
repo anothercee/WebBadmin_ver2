@@ -1,5 +1,4 @@
 :root {
-  --accent: #60efff;
   --title-font: 'Playfair Display', serif;
 }
 
@@ -496,7 +495,7 @@ p{
     width: 240px;
     text-align: center;
     background: #111;
-    border: 1px solid rgba(160,0,255,0.3); /* border tipis ungu */
+    border: 1px solid rgba(160,0,255,0.3); 
     border-radius: 18px;
     padding: 28px;
     transition: 0.4s;
