@@ -552,6 +552,7 @@ p{
 .galeri-slider{
     overflow:hidden;
     position:relative;
+    width:100%;
 }
 
 /* ================= LATIHAN RUTIN (AUTO SCROLL) ================= */
@@ -561,15 +562,12 @@ p{
     gap:20px;
     width:max-content;
     animation:scrollGaleri 25s linear infinite;
+    align-items:center;
 }
 
 @keyframes scrollGaleri{
-    from{
-        transform:translateX(0);
-    }
-    to{
-        transform:translateX(-50%);
-    }
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
 }
 
 /* pause kalau hover */
@@ -577,18 +575,25 @@ p{
     animation-play-state:paused;
 }
 
-/* ================= TURNAMEN (STATIC) ================= */
+/* FOTO AUTO SCROLL (KHUSUS IMG) */
+.galeri-track img{
+    width:250px;
+    height:160px;
+    object-fit:cover;
+    border-radius:16px;
+}
+
+/* ================= VIDEO STATIC ================= */
 
 .galeri-track.static{
     animation:none;
     width:100%;
-    display:flex;
     justify-content:center;
-    gap:20px;
 }
 
-.galeri-track video{
-    width:220px;   
+/* VIDEO KHUSUS YANG STATIC DOANG */
+.galeri-track.static video{
+    width:220px;
     aspect-ratio:9/16;
     object-fit:cover;
     border-radius:16px;
@@ -596,9 +601,10 @@ p{
     cursor:pointer;
 }
 
-.galeri-track video:hover{
+.galeri-track.static video:hover{
     transform:scale(1.05);
 }
+
 
 /* =========================
    PRESTASI SECTION
