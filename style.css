@@ -502,8 +502,7 @@ p{
     position: relative;
 }
 
-/* hover glow ungu */
-.struktur-card:hover {
+.card.struktur-card:hover {
     transform: translateY(-8px);
     border-color: rgba(160,0,255,0.6);
     box-shadow:
