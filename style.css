@@ -840,17 +840,21 @@ p{
 }
 
 .survey-btn {
-  background: linear-gradient(90deg,#a855f7,#9333ea);
-  color: black;
-  font-weight: 600;
+  display: inline-block;
   padding: 14px 40px;
   border-radius: 30px;
   text-decoration: none;
-  transition: 0.3s;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+
+  color: #fff; /* teks putih */
+  background: linear-gradient(90deg,#a855f7,#9333ea);
+  transition: 0.3s transform, 0.3s box-shadow;
 }
 
 .survey-btn:hover {
-  transform: scale(1.05);
+  transform: scale(1.1); /* zoom dikit */
   box-shadow: 0 0 18px #9333ea;
 }
 
