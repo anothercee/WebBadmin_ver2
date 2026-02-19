@@ -243,44 +243,25 @@ p{
     margin-bottom:35px;
 }
 
-/* =========================
-   HERO BUTTONS
-========================= */
+/* HERO BUTTONS */
+.hero-buttons .btn-primary,
+.hero-buttons .btn-secondary {
+    padding: 14px 40px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
 
-.hero-buttons{
-    display:flex;
-    gap:20px;
-    justify-content:center;
-    flex-wrap:wrap;
+    color: #fff; 
+    background: linear-gradient(90deg,#a855f7,#9333ea); 
+    transition: 0.3s transform, 0.3s box-shadow;
 }
 
-.btn-primary{
-    padding:14px 32px;
-    border-radius:40px;
-    background:linear-gradient(90deg,#00ff87,#60efff);
-    color:black;
-    font-weight:600;
-    text-decoration:none;
-    transition:0.3s;
-}
-
-.btn-primary:hover{
-    box-shadow:0 0 18px rgba(96,239,255,0.6);
-    transform:translateY(-2px);
-}
-
-.btn-secondary{
-    padding:14px 32px;
-    border-radius:40px;
-    border:1px solid rgba(255,255,255,0.2);
-    color:white;
-    text-decoration:none;
-    transition:0.3s;
-}
-
-.btn-secondary:hover{
-    border-color:#60efff;
-    box-shadow:0 0 14px rgba(96,239,255,0.4);
+.hero-buttons .btn-primary:hover,
+.hero-buttons .btn-secondary:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 0 18px #9333ea; 
 }
 
 /* =========================
