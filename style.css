@@ -502,14 +502,13 @@ p{
     position: relative;
 }
 
-/* STRUKTUR CARD GLOW SAJA */
 .card.struktur-card:hover {
+    transform: translateY(-8px);
     border-color: rgba(160,0,255,0.6);
     box-shadow:
         0 0 20px rgba(160,0,255,0.5),
         0 0 60px rgba(160,0,255,0.3),
         0 0 80px rgba(160,0,255,0.2);
-    transform: none; 
 }
 
 /* CONNECTOR LINE */
